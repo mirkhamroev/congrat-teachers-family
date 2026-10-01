@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aziz ustozlarim, bayramingiz muborak!</title>
+  <meta name="description" content="1 oktabr — Ustoz va murabbiylar kuni. Onajonim, Dadajonim, Dilnoza va Guliranoga mehr bilan.">
+  <meta name="theme-color" content="#faf5ec">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #faf5ec;
+      --paper: #f4ecdf;
+      --rose: #d4a1a4;
+      --rose-deep: #b8707a;
+      --burgundy: #6e1f2e;
+      --green: #7c8c6a;
+      --gold: #b3925a;
+      --ink: #3d2f2c;
+      --ink-soft: #6b5a55;
+
+      --serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      --gutter: clamp(1.25rem, 6vw, 2.5rem);
+      --section: clamp(4rem, 12vw, 7.5rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    section {
+      padding: var(--section) var(--gutter);
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 38rem;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.9rem, 7vw, 2.75rem);
+      line-height: 1.2;
+      color: var(--burgundy);
+      margin-bottom: 1.75rem;
+      text-wrap: balance;
+    }
+
+    .prose p + p { margin-top: 1.25rem; }
+
+    .poem {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.15rem, 4.9vw, 1.45rem);
+      line-height: 1.6;
+      color: var(--burgundy);
+    }
+    .poem span { display: block; }
+
+    /* ---------- Roses ---------- */
+    .rose {
+      display: block;
+      width: var(--rose-w);
+      height: auto;
+    }
+
+    /* ---------- 1. Hero ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      --rose-w: clamp(10rem, 46vw, 22rem);
+      padding-top: calc(var(--rose-w) * .72 + 1rem);
+      padding-bottom: calc(var(--rose-w) * .72 + 1rem);
+      overflow: hidden;
+    }
+    .hero .rose {
+      position: absolute;
+      pointer-events: none;
+    }
+    /* cut stems sit just past the edge, blooms lean into the page */
+    .hero .rose--tl { top: -.5rem; left: -1rem; transform: rotate(180deg); }
+    .hero .rose--br { bottom: -.5rem; right: -1rem; }
+
+    .eyebrow {
+      font-size: .8125rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .eyebrow strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-variant-numeric: lining-nums;
+      font-weight: 600;
+      letter-spacing: .14em;
+      color: var(--rose-deep);
+      margin-bottom: .25rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.1rem, 9vw, 4rem);
+      line-height: 1.15;
+      color: var(--burgundy);
+      margin: 2rem 0;
+      text-wrap: balance;
+    }
+
+    .names {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 4.8vw, 1.5rem);
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-wrap: balance;
+    }
+    .names i {
+      font-style: normal;
+      color: var(--rose);
+      margin: 0 .35em;
+    }
+
+    /* ---------- 3. Four teachers ---------- */
+    .teachers {
+      background: var(--paper);
+    }
+    .teachers .grid {
+      display: grid;
+      gap: 3.5rem;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+    .teacher { max-width: 28rem; margin: 0 auto; }
+    .teacher h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      color: var(--burgundy);
+    }
+    .teacher h3::after {
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+      margin: .9rem auto 1.1rem;
+    }
+    .teacher .poem { margin-top: 1.4rem; }
+
+    @media (min-width: 48rem) {
+      .teachers .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4.5rem 4rem;
+      }
+    }
+
+    /* ---------- 4. Family poem ---------- */
+    .family .poem { font-size: clamp(1.15rem, 5vw, 1.6rem); line-height: 1.7; }
+    .family .poem + .poem { margin-top: 1.9rem; }
+    .family .rose { width: 6.5rem; margin: 2.5rem auto 0; }
+
+    /* ---------- 5. Final greeting ---------- */
+    .final {
+      position: relative;
+      background: var(--paper);
+      --rose-w: clamp(9rem, 40vw, 18rem);
+      padding-top: calc(var(--rose-w) * .72 + 1.5rem);
+      padding-bottom: calc(var(--rose-w) * .72 + 1.5rem);
+      overflow: hidden;
+    }
+    .final .rose { position: absolute; pointer-events: none; }
+    .final .rose--tr { top: -.5rem; right: -1rem; transform: rotate(180deg); }
+    .final .rose--bl { bottom: -.5rem; left: -1rem; }
+    .final h2 { font-size: clamp(2.1rem, 9vw, 3.5rem); }
+    .final .pride {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 5.2vw, 1.6rem);
+      font-weight: 500;
+      line-height: 1.5;
+      text-wrap: balance;
+    }
+    .final .light {
+      margin-top: 2rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
+      color: var(--rose-deep);
+      text-wrap: balance;
+    }
+    .final .sign {
+      margin-top: 3rem;
+      font-size: .9375rem;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- Motion ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero .wrap { animation: rise 1.4s ease-out both; }
+      .hero .rose { animation: fade 2s ease-out both; }
+
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: opacity .9s ease-out, transform .9s ease-out;
+      }
+      .js .reveal.is-visible { opacity: 1; transform: none; }
+
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(1rem); }
+      }
+      @keyframes fade {
+        from { opacity: 0; }
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <main>
+
+    <!-- 1. Hero -->
+    <section class="hero" id="bosh-sahifa">
+      <img class="rose rose--tl" src="images/rose-pink.webp" width="800" height="567" alt="">
+      <img class="rose rose--br" src="images/rose-pink.webp" width="800" height="567" alt="">
+
+      <div class="wrap">
+        <p class="eyebrow"><strong>1 oktabr</strong> Ustoz va murabbiylar kuni</p>
+        <h1>Aziz va qadrli ustozlarim, bayramingiz muborak bo‘lsin!</h1>
+        <p class="names">Onajonim<i>•</i>Dadajonim<i>•</i>Dilnoza<i>•</i>Gulirano</p>
+      </div>
+    </section>
+
+    <!-- 2. Heartfelt message -->
+    <section class="message">
+      <div class="wrap prose reveal">
+        <h2>Sizga bir olam rahmat...</h2>
+        <p>Ustozning darsi qo‘ng‘iroq bilan tugaydi, lekin mehri hech qachon tugamaydi. U bolaga harf o‘rgatib, aslida o‘ziga ishonishni o‘rgatadi; savolga javob berib, aslida yo‘l ko‘rsatadi.</p>
+        <p>Men bu haqiqatni kitobdan emas, o‘z uyimdan bildim. Sizlar boshqalarning farzandlariga umringizni, kuchingizni, yuragingizni berdingiz — men esa bunga har kuni guvoh bo‘lib, har kuni faxrlanib ulg‘aydim.</p>
+        <p>Bugun sizlarga ham ustoz sifatida, ham eng yaqin insonlarim sifatida ta’zim qilaman.</p>
+      </div>
+    </section>
+
+    <!-- 3. Four teachers -->
+    <section class="teachers" id="ustozlarimiz">
+      <div class="grid">
+
+        <article class="teacher reveal">
+          <h3>Onajonim 🌹</h3>
+          <p>Mening birinchi ustozim — siz. Qalam ushlashni ham, odamlarga mehr bilan qarashni ham sizdan o‘rgandim. Yuragingiz sinfdagi bolalarga ham, bizga ham birdek yetdi.</p>
+          <p class="poem">
+            <span>Tong otmasdan turib darsga shoshgansiz,</span>
+            <span>Kechqurun bizga ham mehr ulashgansiz.</span>
+            <span>Qo‘lingizda bo‘r-u, ko‘zingizda nur —</span>
+            <span>Ham ona, ham ustoz bo‘lib yashagansiz.</span>
+          </p>
+        </article>
+
+        <article class="teacher reveal">
+          <h3>Dadajonim 🌹</h3>
+          <p>Siz kam gapirib, ko‘p o‘rgatdingiz. Halollik, sabr va so‘zida turish nima ekanini darslikdan emas, sizga qarab bildim. Sizning farzandingiz bo‘lish — eng katta baxtim.</p>
+          <p class="poem">
+            <span>Kam so‘zlab, ko‘p narsa o‘rgatgan dadam,</span>
+            <span>Yiqilsam, qo‘limdan ko‘targan dadam.</span>
+            <span>Tog‘ kabi turibsiz ortimda hamon —</span>
+            <span>Menga ham, elga ham ustoz bo‘lgan dadam.</span>
+          </p>
+        </article>
+
+        <article class="teacher reveal">
+          <h3>Dilnoza 🌹</h3>
+          <p>Dilnoza opa, siz sinfga kirganda bolalarning ko‘zi yorishadi. Sabringiz, mehringiz va kasbingizga sadoqatingiz bilan ota-onamizning yo‘lini munosib davom ettiryapsiz.</p>
+          <p class="poem">
+            <span>Dilingiz nozik-u, irodangiz mahkam,</span>
+            <span>Har bir bolaga bor so‘zingiz — malham.</span>
+            <span>Ota-onam yoqqan chiroqni asrab,</span>
+            <span>Yoritib kelyapsiz necha qalbni ham.</span>
+          </p>
+        </article>
+
+        <article class="teacher reveal">
+          <h3>Gulirano 🌹</h3>
+          <p>Gulirano opa, ismingiz kabi o‘zingiz ham gulsiz — qayerga borsangiz, bahor olib kirasiz. O‘quvchilaringiz sizdan faqat bilim emas, hayotga muhabbat ham oladi.</p>
+          <p class="poem">
+            <span>Ismingizda gul bor, so‘zingizda bol,</span>
+            <span>Sizni ko‘rgan bola bo‘ladi xushhol.</span>
+            <span>Bilim ekib yurgan mehribon qo‘llar</span>
+            <span>Hech qachon ko‘rmasin charchoq va malol.</span>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. Family poem -->
+    <section class="family" id="sher">
+      <div class="wrap reveal">
+        <h2>To‘rt ustoz — bir oila</h2>
+
+        <p class="poem">
+          <span>Bir uyda to‘rt chiroq yonadi har kun,</span>
+          <span>To‘rtovi to‘rt yoqqa taratadi nur.</span>
+          <span>Shu nurda ulg‘aydim, mana shuning-chun</span>
+          <span>Boshim baland mening, ko‘nglimda g‘urur.</span>
+        </p>
+        <p class="poem">
+          <span>Onam mehr bilan ochdi ko‘zimni,</span>
+          <span>Dadam sabr bilan ko‘rsatdi yo‘lni.</span>
+          <span>Dilnoza, Gulirano tutib izini,</span>
+          <span>Yuzlab bolalarga uzatdi qo‘lni.</span>
+        </p>
+        <p class="poem">
+          <span>Qancha sinf, qancha dars, qancha qo‘ng‘iroq,</span>
+          <span>Qancha bola sizdan topdi o‘z yo‘lin.</span>
+          <span>Sizlar bergan bilim — so‘nmas bir chiroq,</span>
+          <span>Yillar o‘tsa hamki, yoritar dilin.</span>
+        </p>
+        <p class="poem">
+          <span>Men esa bir narsa bilan boyman, bas:</span>
+          <span>Ustozlar uyida o‘sdim — shu davlat.</span>
+          <span>Sizlarga ta’zimim bir kunlik emas,</span>
+          <span>Umrim boricha bor mehr-u hurmat.</span>
+        </p>
+
+        <img class="rose" src="images/rose-sprig.webp" width="400" height="561" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <!-- 5. Final greeting -->
+    <section class="final" id="tilak">
+      <img class="rose rose--tr" src="images/rose-burgundy.webp" width="800" height="575" alt="" loading="lazy">
+      <img class="rose rose--bl" src="images/rose-burgundy.webp" width="800" height="575" alt="" loading="lazy">
+
+      <div class="wrap reveal">
+        <h2>Bayramingiz muborak bo‘lsin!</h2>
+        <p class="pride">Aziz Onajonim, Dadajonim, Dilnoza va Gulirano — sizlar bilan faxrlanaman.</p>
+        <p class="light">Ustoz bergan nur hech qachon so‘nmaydi.</p>
+        <p class="sign">Cheksiz mehr bilan · 1 oktabr</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Gentle reveal on scroll; without JS everything is simply visible.
+    if ('IntersectionObserver' in window) {
+      document.documentElement.classList.add('js');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    }
+  </script>
+</body>
+</html>
